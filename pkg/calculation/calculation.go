@@ -68,7 +68,6 @@ func respondWithError(w http.ResponseWriter, message string, statusCode int) {
 	json.NewEncoder(w).Encode(response)
 }
 
-var ErrInvalidExpression = errors.New("Expression is not valid")
 
 func Calc(expression string) (float64, error) {
 	expression = strings.ReplaceAll(expression, " ", "")
@@ -151,7 +150,7 @@ func evaluatePostfix(postfix []string) (float64, error) {
 				stack = append(stack, a*b)
 			case "/":
 				if b == 0 {
-					return 0, errors.New("divide by 0")
+					return 0, ErrDivideByZero
 				}
 				stack = append(stack, a/b)
 			default:
