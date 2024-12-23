@@ -6,7 +6,7 @@
 
 # **Как им пользоваться?**
 > 1) Скачиваете
-> 2) Переходите в папку **cmd** и запускаете файл **main.go** (P.S. сервер запускается на "http://localhost:8080/api/v1/calculate")
+> 2) Переходите в папку **cmd** и запускаете файл **main.go** (```go run cmd/main.go```) (P.S. сервер запускается на "http://localhost:8080/api/v1/calculate")
 > 3) Открываем терминал
 > 4) Пишем туда POST запрос который должен выглядить так: **```Invoke-WebRequest -Uri "http://localhost:8080/api/v1/calculate" -Method Post -Body '{"expression": "3 + 5"}' -ContentType "application/json"```** (В некоторых случаях может выглядеть по другому)
 > 5) В терминале должно вывести примерно это: 
